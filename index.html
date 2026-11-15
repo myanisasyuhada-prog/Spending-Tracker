@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spending Tracker</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<main>
+  <div id="loading" class="empty" style="margin-top:30vh">Loading…</div>
+
+  <!-- login: only you, only once per phone -->
+  <div id="loginView" class="loginwrap" hidden>
+    <h1>My Spending Tracker</h1>
+    <form id="loginForm" class="card">
+      <h2>Log in</h2>
+      <input id="email" type="email" autocomplete="username" placeholder="Email" required>
+      <input id="password" type="password" autocomplete="current-password" placeholder="Password" required>
+      <div class="loginerr" id="loginErr"></div>
+      <button type="submit" id="loginBtn" style="width:100%">Log in</button>
+    </form>
+  </div>
+
+  <div id="appView" hidden>
+    <h1>My Spending Tracker</h1>
+
+    <div class="monthnav">
+      <button class="ghost" id="prevM">‹</button>
+      <span class="name" id="monthName"></span>
+      <button class="ghost" id="nextM">›</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <section class="card hero" id="hero"></section>
+    <section class="card saved" id="saved"></section>
+
+    <section class="card" id="addSpendCard">
+      <h2>Add spending</h2>
+      <div class="row">
+        <input id="spNote" type="text" placeholder="Item Name">
+        <input id="spAmount" type="number" inputmode="decimal" placeholder="Price (RM)">
+      </div>
+      <button id="spAdd">Add</button>
+    </section>
+
+    <section class="card">
+      <h2 id="spTitle">Bought</h2>
+      <div id="spList"></div>
+    </section>
+
+    <section class="card">
+      <h2>Wish List</h2>
+      <div id="addWishForm">
+        <div class="row">
+          <input id="wName" type="text" placeholder="Item Name">
+          <input id="wPrice" type="number" inputmode="decimal" placeholder="Price (RM)">
+        </div>
+        <button id="wAdd">Add to wishlist</button>
+      </div>
+      <div id="wList"></div>
+    </section>
+
+    <section class="card" id="setupCard">
+      <details>
+        <summary id="setupTitle">Monthly Budget Setup</summary>
+        <div style="margin-top:10px">
+          <label class="small">Monthly allowance (RM)</label>
+          <input id="allowance" type="number" inputmode="decimal">
+          <label class="small">Savings per month (RM)</label>
+          <input id="savings" type="number" inputmode="decimal">
+          <label class="small">Food Spending per month (RM)</label>
+          <input id="foods" type="number" inputmode="decimal">
+          <button id="saveSetup">Save</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="nocard">
+      <div class="small" id="acct" style="margin-bottom:8px"></div>
+      <button class="ghost" id="logout">Log out</button>
+    </section>
+
+  </div>
+</main>
+

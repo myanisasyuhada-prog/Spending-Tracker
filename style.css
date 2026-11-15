@@ -1,0 +1,46 @@
+  :root { --bg:#fffffc; --card:#fff; --ink:#000000; --muted:#32511a; --pink:#7e92a5; --green:#80bb59; --red:#d33a3a; --line:#b8b0b3; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif, MyFont; background:var(--bg); color:var(--ink); }
+  main { max-width:440px; margin:0 auto; padding:16px 16px 48px; }
+  h1 { font-size:25px; margin:0 0 14px; padding: 10px ; color: var(--pink); text-align:center;  top: 0; z-index: 10; font-family: MyFont;}
+  h2 { font-size:14px; margin:0 0 8px; line-height:1.1; justify-content:center; font-weight: 500; color: var(--pink); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px; margin-bottom:14px; font-size: 15px ;}
+  .monthnav { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .monthnav .name { font-weight:700; font-size:16px; }
+  .monthnav button { padding:8px 14px; }
+  .hero { text-align:center; }
+  .hero .label { color:var(--muted); font-size:13px; }
+  .hero .big { font-size:52px; font-weight:800; line-height:1.1; margin:4px 0; color:var(--green); }
+  .hero.over .big { color:var(--red); }
+  .bar { height:8px; background:var(--line); border-radius:99px; overflow:hidden; margin:10px 0 6px; }
+  .bar > div { height:100%; background:var(--green); width:0; transition:width .3s; }
+  .hero.over .bar > div { background:var(--red); }
+  .small { font-size:10px; color:var(--muted); }
+  #acct {text-align:center;}
+  #logout {display:block; margin:0 auto; padding:10px 12px; background:#e5f4fd;}
+  .warn { color:var(--red); font-weight:600; font-size:13px; margin-top:6px; }
+  .saved { background:linear-gradient(135deg,#e5f4fd,#fff); text-align:center; }
+  .saved .num { font-size:28px; font-weight:800; color:var(--pink); }
+  input { width:100%; padding:10px; border:1px solid var(--line); border-radius:10px; font-size:12px; margin-bottom:8px; background:#fff; color:var(--ink); }
+  .row { display:flex; gap:8px; font-size: 10px }
+  button { border:0; border-radius:8px; padding:5px 10px; font-size:13px; font-weight:500; background:var(--pink); color:#fff; cursor:pointer; }
+  button.ghost { background:#e5f4fd; color:var(--ink); text-align:center; justify-content: center;}
+  button[data-buy] { background:#e5f4fd; color:var(--ink); }
+  button:disabled { background:#e5f4fd; color:#a99fae; cursor:not-allowed; }
+  .item { border-top:1px solid var(--line); padding:10px 0; }
+  .item:first-of-type { border-top:0; }
+  .item .top { display:flex; justify-content:space-between; font-weight:600; gap:8px; }
+  .item .actions { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
+  .item .actions button { padding:7px 10px; font-size:13px; }
+  .badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:99px; margin-left:6px; vertical-align:middle; }
+  .badge.pending { background:#f8f8d9; color:#755104; }
+  .badge.bought { background:#e5f4fd; color:var(--pink); }
+  .badge.skipped { background:#e5f4fd; color:var(--pink); }
+  details summary { cursor:pointer; font-weight:600; font-size:14px; }
+  .empty { color:var(--muted); font-size:13px; text-align:center; padding:8px 0; }
+  .status { text-align:center; font-size:12px; color:var(--muted); margin-top:-6px; margin-bottom:12px; min-height:16px; }
+  .status.err { color:var(--red); font-weight:600; }
+  .loginwrap { max-width:360px; margin:12vh auto 0; }
+  .loginerr { color:var(--red); font-size:13px; font-weight:600; margin:0 0 8px; min-height:18px; }
+  [hidden] { display:none !important; }
+  @font-face {font-family: "MyFont"; src: url("OrangeAvenueDEMO-Regular.otf") format("truetype"); font-weight: 200;}
