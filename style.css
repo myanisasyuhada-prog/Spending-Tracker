@@ -43,4 +43,4 @@
   .loginwrap { max-width:360px; margin:12vh auto 0; }
   .loginerr { color:var(--red); font-size:13px; font-weight:600; margin:0 0 8px; min-height:18px; }
   [hidden] { display:none !important; }
-  @font-face {font-family: "MyFont"; src: url("OrangeAvenueDEMO-Regular.otf") format("truetype"); font-weight: 200;}
+  @font-face {font-family: "MyFont"; src: url("OrangeAvenueDEMO-Regular.otf") format("opentype"); font-weight: 200;}
