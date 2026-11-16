@@ -4,10 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spending Tracker</title>
+
+<!-- font: the closest free match to the "i was created to create." card -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
-<script type="module" src="app.js"></script>
+
+<!-- install as an app on the phone -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#eeeeec">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Spending">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
+
+<!-- intro screen: shows first, then fades away -->
+<div id="splash" aria-hidden="true">
+  <h1 class="splash-logo"><span>My</span><span>Spending</span><span>Tracker</span></h1>
+</div>
+
 <main>
   <div id="loading" class="empty" style="margin-top:30vh">Loading…</div>
 
@@ -24,17 +44,27 @@
   </div>
 
   <div id="appView" hidden>
-    <h1>My Spending Tracker</h1>
+    <!-- profile photo (tap it to upload) + logo -->
+    <header class="topbar">
+      <button type="button" class="avatar" id="avatarBtn" aria-label="Change profile photo" title="Change profile photo">
+        <img id="avatarImg" alt="Profile photo" hidden>
+        <span class="avatar-ph" id="avatarPh">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>
+        </span>
+        <span class="avatar-plus" id="avatarPlus" aria-hidden="true">+</span>
+      </button>
+      <h1>My Spending Tracker</h1>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+    </header>
 
     <div class="monthnav">
-      <button class="ghost" id="prevM">‹</button>
+      <button class="ghost" id="prevM" aria-label="Previous month">‹</button>
       <span class="name" id="monthName"></span>
-      <button class="ghost" id="nextM">›</button>
+      <button class="ghost" id="nextM" aria-label="Next month">›</button>
     </div>
     <div class="status" id="status"></div>
 
     <section class="card hero" id="hero"></section>
-    <section class="card saved" id="saved"></section>
 
     <section class="card" id="addSpendCard">
       <h2>Add spending</h2>
@@ -78,10 +108,13 @@
     </section>
 
     <section class="nocard">
-      <div class="small" id="acct" style="margin-bottom:8px"></div>
+      <div class="small" id="acct"></div>
       <button class="ghost" id="logout">Log out</button>
     </section>
 
   </div>
 </main>
 
+<script type="module" src="app.js"></script>
+</body>
+</html>
