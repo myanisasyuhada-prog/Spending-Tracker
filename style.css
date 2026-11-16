@@ -237,13 +237,13 @@ details[open] summary::after { transform:rotate(45deg); }
 }
 #splash.done { opacity:0; visibility:hidden; pointer-events:none; }
 .splash-logo {
-  margin: 10vh auto 0;
-  text-align:center;
-  font-size:clamp(40px, 12vw, 50px);
-  font-weight:600;
-  line-height:.96;
-  letter-spacing:-.05em;
-  color:var(--blue);
+  margin: 0 0 12vh 0;
+  text-align: center;
+  font-size: clamp(40px, 12vw, 50px);
+  font-weight: 600;
+  line-height: .96;
+  letter-spacing: -.05em;
+  color: var(--blue);
 }
 .splash-logo span { display:block; opacity:0; transform:translateY(20px); animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards; }
 .splash-logo span:nth-child(2) { animation-delay:.14s; }
